@@ -8,6 +8,6 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String hello() {
-        return "Hello World Time";
+        return "Hello World Time Today";
     }
 }
