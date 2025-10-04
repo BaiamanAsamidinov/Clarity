@@ -1,20 +1,28 @@
 package com.now.Clarity.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Table(name = "app_user")
 public class User {
 
+    // --- Add the required Setter Methods ---
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Setter
     @Column(nullable = false, unique = true)
     private String username;
 
+    @Setter
     @Column(nullable = false)
-    private String passwordHash; // Stores the secure hash, not plain password
+    private String passwordHash;
 
-    // Getters and Setters (omitted for brevity)
-    // No-arg and all-arg constructors (omitted for brevity)
+    public String getPasswordHash() {
+        return passwordHash;
+    }
 }
