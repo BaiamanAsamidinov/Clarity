@@ -7,5 +7,6 @@ import java.util.Optional;
 public interface UserService {
     User registerUser(UserRegistrationDto registrationDto);
 
+    //String username
     Optional<User> findByUsername(String username);
 }
